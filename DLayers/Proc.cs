@@ -15,13 +15,12 @@ namespace AdminForm.DLayers
             string sql = "exec Sp_AddReservation '" + User + "','" + ShowID + "'," + Seat;
             return Main.ExecuteNoTable(sql);
         }
-        public bool AddShowTime(string ShowTimeID, string MovieID, string Date, string Start, string End, string RoomID)
+        public bool AddShowTime(string ShowTimeID, string MovieID, string Date, string Start, string RoomID)
         {
             string sql = "EXEC Sp_AddNewShowTime @ShowTime_ID ='" + ShowTimeID
                 + "', @Movie_ID = '" + MovieID
                 + "', @Date = '" + Date
                 + "', @Start_Time = '" + Start
-                + "', @End_Time = '" + End
                 + "', @Room_ID ='" + RoomID + "'";
             return Main.ExecuteNoTable(sql);
         }

@@ -70,11 +70,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DataView.Location = new System.Drawing.Point(12, 35);
+            this.DataView.Location = new System.Drawing.Point(9, 28);
+            this.DataView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DataView.Name = "DataView";
             this.DataView.RowHeadersWidth = 51;
             this.DataView.RowTemplate.Height = 24;
-            this.DataView.Size = new System.Drawing.Size(1256, 619);
+            this.DataView.Size = new System.Drawing.Size(942, 503);
             this.DataView.TabIndex = 0;
             // 
             // toolStrip1
@@ -86,7 +87,7 @@
             this.toolStripComboBox1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1280, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(960, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -102,41 +103,41 @@
             this.Views.Image = ((System.Drawing.Image)(resources.GetObject("Views.Image")));
             this.Views.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Views.Name = "Views";
-            this.Views.Size = new System.Drawing.Size(71, 29);
+            this.Views.Size = new System.Drawing.Size(60, 24);
             this.Views.Text = "Views";
             // 
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.customersToolStripMenuItem.Text = "Customers";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.customersToolStripMenuItem_Click);
             // 
             // showingTimeToolStripMenuItem
             // 
             this.showingTimeToolStripMenuItem.Name = "showingTimeToolStripMenuItem";
-            this.showingTimeToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.showingTimeToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.showingTimeToolStripMenuItem.Text = "Showing Time";
             this.showingTimeToolStripMenuItem.Click += new System.EventHandler(this.showingTimeToolStripMenuItem_Click);
             // 
             // moviesToolStripMenuItem
             // 
             this.moviesToolStripMenuItem.Name = "moviesToolStripMenuItem";
-            this.moviesToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.moviesToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.moviesToolStripMenuItem.Text = "Movies";
             this.moviesToolStripMenuItem.Click += new System.EventHandler(this.moviesToolStripMenuItem_Click);
             // 
             // reservationsToolStripMenuItem
             // 
             this.reservationsToolStripMenuItem.Name = "reservationsToolStripMenuItem";
-            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.reservationsToolStripMenuItem.Text = "Reservations";
             this.reservationsToolStripMenuItem.Click += new System.EventHandler(this.reservationsToolStripMenuItem_Click);
             // 
             // employeesToolStripMenuItem
             // 
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.employeesToolStripMenuItem.Text = "Employees";
             this.employeesToolStripMenuItem.Click += new System.EventHandler(this.employeesToolStripMenuItem_Click);
             // 
@@ -144,7 +145,7 @@
             // 
             this.toolStripComboBox1.DropDownWidth = 121;
             this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(230, 32);
+            this.toolStripComboBox1.Size = new System.Drawing.Size(174, 27);
             this.toolStripComboBox1.Text = "None";
             this.toolStripComboBox1.TextUpdate += new System.EventHandler(this.toolStripComboBox1_TextUpdate);
             this.toolStripComboBox1.TextChanged += new System.EventHandler(this.toolStripComboBox1_TextChanged);
@@ -152,9 +153,10 @@
             // ADDBUTT
             // 
             this.ADDBUTT.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ADDBUTT.Location = new System.Drawing.Point(501, 661);
+            this.ADDBUTT.Location = new System.Drawing.Point(376, 537);
+            this.ADDBUTT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ADDBUTT.Name = "ADDBUTT";
-            this.ADDBUTT.Size = new System.Drawing.Size(125, 47);
+            this.ADDBUTT.Size = new System.Drawing.Size(94, 38);
             this.ADDBUTT.TabIndex = 2;
             this.ADDBUTT.Text = "ADD";
             this.ADDBUTT.UseVisualStyleBackColor = true;
@@ -163,9 +165,10 @@
             // DELETE
             // 
             this.DELETE.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.DELETE.Location = new System.Drawing.Point(751, 661);
+            this.DELETE.Location = new System.Drawing.Point(563, 537);
+            this.DELETE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DELETE.Name = "DELETE";
-            this.DELETE.Size = new System.Drawing.Size(125, 47);
+            this.DELETE.Size = new System.Drawing.Size(94, 38);
             this.DELETE.TabIndex = 3;
             this.DELETE.Text = "DELETE";
             this.DELETE.UseVisualStyleBackColor = true;
@@ -173,14 +176,16 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(960, 585);
             this.Controls.Add(this.DELETE);
             this.Controls.Add(this.ADDBUTT);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.DataView);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.DataView)).EndInit();
             this.toolStrip1.ResumeLayout(false);

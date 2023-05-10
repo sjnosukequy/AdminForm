@@ -17,7 +17,7 @@ namespace AdminForm.DLayers
         }
         public bool AddShowTime(string ShowTimeID, string MovieID, string Date, string Start, string RoomID)
         {
-            string sql = $"EXEC Sp_AddNewShowTime '{ShowTimeID}', '{MovieID}', {Date}, {Start}, {RoomID}";
+            string sql = $"EXEC Sp_AddNewShowTime '{ShowTimeID}', '{MovieID}', '{Date}', '{Start}', '{RoomID}'";
             return Main.ExecuteNoTable(sql);
         }
         public bool AddMov(string ID, string Name, int Cost, string Time, string Actor, string Direc, string ComID)

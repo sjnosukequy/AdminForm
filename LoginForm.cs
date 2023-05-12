@@ -30,4 +30,15 @@ public partial class LoginForm : Form
         else
             MessageBox.Show("Wrong!!");
     }
+
+    private void UserID_tb_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+    {
+        if(e.KeyCode == Keys.Enter)
+            Login_btn_Click(sender, e);
+    }
+
+    private void checkBox1_Click(object sender, EventArgs e)
+    {
+        this.Password_tb.UseSystemPasswordChar = !checkBox1.Checked;
+    }
 }

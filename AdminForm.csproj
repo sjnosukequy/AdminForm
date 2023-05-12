@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLayers\DBMain.cs" />
+    <Compile Include="DLayers\Func.cs" />
     <Compile Include="DLayers\Login.cs" />
     <Compile Include="DLayers\Proc.cs" />
     <Compile Include="DLayers\Views.cs" />

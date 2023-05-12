@@ -15,6 +15,7 @@ namespace AdminForm
     {
         Views views = new Views();
         Proc procs = new Proc();
+        Func funcs = new Func();
         DataTable DataTables = null;
         DataSet DataSets = null;
 
@@ -24,20 +25,30 @@ namespace AdminForm
         private bool Movie = false;
         private bool Customer = false;
         private bool Employee = false;
+        private bool Review = false;
+        private bool Company = false;
         public Main()
         {
             InitializeComponent();
             DataSets = views.Movies();
             DataTables = DataSets.Tables[0];
             DataView.DataSource = DataTables;
+            this.TextBox.Enabled = false;
+            this.ADDBUTT.Enabled = true;
+            this.DELETE.Enabled = false;
         }
         private void RESETFLAGS()
         {
-        Res = false;
-        ShowTime = false;
-        Movie = false;
-        Customer = false;
-        Employee = false;
+            Res = false;
+            ShowTime = false;
+            Movie = false;
+            Customer = false;
+            Employee = false;
+            Review = false;
+            Company = false;
+            this.TextBox.Enabled = false;
+            this.TextBox.Clear();
+            this.label1.Visible = false;
         }
         //TOOL STRIP
         private void showingTimeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,8 +65,9 @@ namespace AdminForm
             "ClosedShowing",
             "ShowingInDayAvailable",
             "ShowingInDayOut",
-            "HighRatingShowing" });
-            this.toolStripComboBox1.Text = "6 Filters";
+            "HighRatingShowing",
+            "ShowingByScreen"});
+            this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
             this.ADDBUTT.Enabled = true;
             this.DELETE.Enabled = false;
         }
@@ -67,7 +79,10 @@ namespace AdminForm
             DataTables = DataSets.Tables[0];
             DataView.DataSource = DataTables;
             this.toolStripComboBox1.Items.Clear();
-            this.toolStripComboBox1.Text = "None";
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "ShowTimeByCompany",
+            "ShowTimeByActor"});
+            this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
             this.ADDBUTT.Enabled = true;
             this.DELETE.Enabled = false;
         }
@@ -79,7 +94,7 @@ namespace AdminForm
             DataTables = DataSets.Tables[0];
             DataView.DataSource = DataTables;
             this.toolStripComboBox1.Items.Clear();
-            this.toolStripComboBox1.Text = "None";
+            this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
             this.ADDBUTT.Enabled = false;
             this.DELETE.Enabled = true;
         }
@@ -93,9 +108,10 @@ namespace AdminForm
             this.toolStripComboBox1.Items.Clear();
             this.toolStripComboBox1.Items.AddRange(new object[] {
             "VIP",
-            "NoVIP"});
-            this.toolStripComboBox1.Text = "2 Filters";
-            this.ADDBUTT.Enabled = false;
+            "NoVIP",
+            "UserInfo"});
+            this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
+            this.ADDBUTT.Enabled = true;
             this.DELETE.Enabled = false;
         }
         private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,35 +122,39 @@ namespace AdminForm
             DataTables = DataSets.Tables[0];
             DataView.DataSource = DataTables;
             this.toolStripComboBox1.Items.Clear();
-            this.toolStrip1.Text = "None";
+            this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
             this.ADDBUTT.Enabled = false;
             this.DELETE.Enabled = false;
         }
-        private void toolStripComboBox1_TextUpdate(object sender, EventArgs e)
+        private void reviewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
-        }
-        private void toolStripComboBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (toolStripComboBox1.Text == "VIP")
-                DataSets = views.ISVIP();
-            else if (toolStripComboBox1.Text == "NoVIP")
-                DataSets = views.NoVIP();
-            else if (toolStripComboBox1.Text == "ShowingInDay")
-                DataSets = views.ShowingInDay();
-            else if (toolStripComboBox1.Text == "ComingShowing")
-                DataSets = views.ComingShow();
-            else if (toolStripComboBox1.Text == "ClosedShowing")
-                DataSets = views.ClosedShow();
-            else if (toolStripComboBox1.Text == "ShowingInDayAvailable")
-                DataSets = views.ShowInDayAva();
-            else if (toolStripComboBox1.Text == "ShowingInDayOut")
-                DataSets = views.ShowInDayOut();
-            else if (toolStripComboBox1.Text == "HighRatingShowing")
-                DataSets = views.highRatingShow();
+            RESETFLAGS();
+            Review = true;
+            DataSets = views.Rev();
             DataTables = DataSets.Tables[0];
             DataView.DataSource = DataTables;
+            this.toolStripComboBox1.Items.Clear();
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "MovieRating",
+            "UserRating"});
+            this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
+            this.ADDBUTT.Enabled = false;
+            this.DELETE.Enabled = false;
         }
+        private void companyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RESETFLAGS();
+            Review = true;
+            DataSets = views.Company();
+            DataTables = DataSets.Tables[0];
+            DataView.DataSource = DataTables;
+            this.toolStripComboBox1.Items.Clear();
+            this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
+            this.ADDBUTT.Enabled = false;
+            this.DELETE.Enabled = false;
+        }
+
+        //ADD - DEL BUTT
         private void ADDBUTT_Click(object sender, EventArgs e)
         {
             int a = this.DataView.Rows.Count - 2;
@@ -171,14 +191,19 @@ namespace AdminForm
             }
             else if(Customer)
             {
-
+                if (procs.AddCus(this.DataView.Rows[a].Cells["User_ID"].Value.ToString(), this.DataView.Rows[a].Cells["Password"].Value.ToString(), this.DataView.Rows[a].Cells["Name"].Value.ToString(), this.DataView.Rows[a].Cells["Email"].Value.ToString(), this.DataView.Rows[a].Cells["Address"].Value.ToString(),Int32.Parse(this.DataView.Rows[a].Cells["Phone"].Value.ToString())))
+                {
+                    customersToolStripMenuItem_Click(sender, e);
+                    MessageBox.Show("SUCCESS!!");
+                }
+                else
+                    MessageBox.Show("FAIL");
             }
             else if(Employee)
             {
 
             }
         }
-
         private void DELETE_Click(object sender, EventArgs e)
         {
             if (Res)
@@ -208,6 +233,93 @@ namespace AdminForm
             {
 
             }
+        }
+
+        //TEXTBOX FILTERS
+        private void toolStripComboBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripComboBox1.Text == "VIP")
+                DataSets = views.ISVIP();
+            else if (toolStripComboBox1.Text == "NoVIP")
+                DataSets = views.NoVIP();
+            else if (toolStripComboBox1.Text == "ShowingInDay")
+                DataSets = views.ShowingInDay();
+            else if (toolStripComboBox1.Text == "ComingShowing")
+                DataSets = views.ComingShow();
+            else if (toolStripComboBox1.Text == "ClosedShowing")
+                DataSets = views.ClosedShow();
+            else if (toolStripComboBox1.Text == "ShowingInDayAvailable")
+                DataSets = views.ShowInDayAva();
+            else if (toolStripComboBox1.Text == "ShowingInDayOut")
+                DataSets = views.ShowInDayOut();
+            else if (toolStripComboBox1.Text == "HighRatingShowing")
+                DataSets = views.highRatingShow();
+            else if (toolStripComboBox1.Text == "MovieRating")
+            {
+                this.label1.Visible = true;
+                this.label1.Text = "<- ShowTimeID";
+                this.TextBox.Enabled = true;
+                this.TextBox.Focus();
+            }
+            else if (toolStripComboBox1.Text == "UserRating")
+            {
+                this.label1.Visible = true;
+                this.label1.Text = "<- UserID";
+                this.TextBox.Enabled = true;
+                this.TextBox.Focus();
+            }
+            else if (toolStripComboBox1.Text == "UserInfo")
+            {
+                this.label1.Visible = true;
+                this.label1.Text = "<- UserID";
+                this.TextBox.Enabled = true;
+                this.TextBox.Focus();
+            }
+            else if (toolStripComboBox1.Text == "ShowTimeByCompany")
+            {
+                this.label1.Visible = true;
+                this.label1.Text = "<- Company Name";
+                this.TextBox.Enabled = true;
+                this.TextBox.Focus();
+            }
+            else if (toolStripComboBox1.Text == "ShowTimeByActor")
+            {
+                this.label1.Visible = true;
+                this.label1.Text = "<- Actor Name";
+                this.TextBox.Enabled = true;
+                this.TextBox.Focus();
+            }
+            else if (toolStripComboBox1.Text == "ShowingByScreen")
+            {
+                this.label1.Visible = true;
+                this.label1.Text = "<- Screen Resolution";
+                this.TextBox.Enabled = true;
+                this.TextBox.Focus();
+            }
+            //RESET
+            DataView.DataSource = null;
+            DataView.Rows.Clear();
+            DataView.Columns.Clear();
+            //REBIND DATA
+            DataTables = DataSets.Tables[0];
+            DataView.DataSource = DataTables;
+        }
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripComboBox1.Text == "MovieRating")
+                DataSets = funcs.MovieRating(this.TextBox.Text);
+            else if (toolStripComboBox1.Text == "UserRating")
+                DataSets = funcs.UserCommented(this.TextBox.Text);
+            else if(toolStripComboBox1.Text == "UserInfo")
+                DataSets = funcs.Userinfo(this.TextBox.Text);
+            else if (toolStripComboBox1.Text == "ShowTimeByCompany")
+                DataSets = funcs.CompMovie(this.TextBox.Text);
+            else if (toolStripComboBox1.Text == "ShowTimeByActor")
+                DataSets = funcs.ActorMovie(this.TextBox.Text);
+            else if (toolStripComboBox1.Text == "ShowingByScreen")
+                DataSets = funcs.ResMovie(this.TextBox.Text);
+            DataTables = DataSets.Tables[0];
+            DataView.DataSource = DataTables;
         }
     }
 }

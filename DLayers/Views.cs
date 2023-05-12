@@ -13,12 +13,17 @@ namespace AdminForm.DLayers
         DBMain Main = new DBMain();
         public DataSet ShowTime()
         {
-            string sql = "select * from ShowTime";
+            string sql = "select A.*, B.Screen_Resolution, B.Audio_Quality from ShowTime A join Room B on A.Room_ID = B.Room_ID";
             return Main.TableQuerry(sql);
         }
         public DataSet Movies()
         {
-            string sql = "select * from Movie";
+            string sql = "select B.*, A.Name from Company A inner join Movie B on A.Company_ID = B.Company_ID";
+            return Main.TableQuerry(sql);
+        }
+        public DataSet Company()
+        {
+            string sql = "select * from Company";
             return Main.TableQuerry(sql);
         }
         public DataSet Res()
@@ -28,12 +33,17 @@ namespace AdminForm.DLayers
         }
         public DataSet Emp()
         {
-            string sql = "select * from User_Information A inner join Admin B on A.User_ID = B.User_ID";
+            string sql = "select A.*, B.Password, B.Role from User_Information A inner join Admin B on A.User_ID = B.User_ID";
             return Main.TableQuerry(sql);
         }
         public DataSet KH()
         {
-            string sql = "select * from User_Information A inner join Customer B on A.User_ID = B.User_ID";
+            string sql = "select A.*, B.Password, B.Balance, B.Point, B.isVIP from User_Information A inner join Customer B on A.User_ID = B.User_ID";
+            return Main.TableQuerry(sql);
+        }
+        public DataSet Rev()
+        {
+            string sql = "select * from View_Comments";
             return Main.TableQuerry(sql);
         }
         public DataSet ISVIP()

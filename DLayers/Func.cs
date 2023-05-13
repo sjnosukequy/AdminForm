@@ -28,17 +28,17 @@ namespace AdminForm.DLayers
         }
         public DataSet ActorMovie(string Name)
         {
-            string sql = $"select * from Fn_ShowTime_by_Actor('{Name}')";
+            string sql = $"select * from Fn_ShowTimebyActor('{Name}')";
             return Main.TableQuerry(sql);
         }
         public DataSet CompMovie(string Name)
         {
-            string sql = $"select * from Fn_ShowTime_by_Company('{Name}')";
+            string sql = $"select * from Fn_ShowTimebyCompany('{Name}')";
             return Main.TableQuerry(sql);
         }
         public DataSet ResMovie(string Name)
         {
-            string sql = $"select * from Fn_ShowTime_by_Screen('{Name}')";
+            string sql = $"select * from Fn_ShowTimebyScreen('{Name}')";
             return Main.TableQuerry(sql);
         }
     }

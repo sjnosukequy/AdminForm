@@ -49,6 +49,9 @@ namespace AdminForm
             this.TextBox.Enabled = false;
             this.TextBox.Clear();
             this.label1.Visible = false;
+            this.label2.Visible = false;
+            this.BalanceTextBox.Visible = false;
+            this.BalanceBUTT.Visible = false;
         }
         //TOOL STRIP
         private void showingTimeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +116,14 @@ namespace AdminForm
             this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
             this.ADDBUTT.Enabled = true;
             this.DELETE.Enabled = false;
+
+            this.label1.Visible = true;
+            this.label1.Text = "<- UserID";
+            this.TextBox.Enabled = true;
+            this.TextBox.Focus();
+            this.label2.Visible = true;
+            this.BalanceTextBox.Visible = true;
+            this.BalanceBUTT.Visible = true;
         }
         private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -234,6 +245,24 @@ namespace AdminForm
 
             }
         }
+        private void BalanceBUTT_Click(object sender, EventArgs e)
+        {
+            int a = Int32.Parse(this.BalanceTextBox.Text);
+            if (procs.AddBaL(this.TextBox.Text, a))
+            {
+                //RESET
+                DataView.DataSource = null;
+                DataView.Rows.Clear();
+                DataView.Columns.Clear();
+                //REBIND
+                DataSets = views.KH();
+                DataTables = DataSets.Tables[0];
+                DataView.DataSource = DataTables;
+                MessageBox.Show("Success");
+            }
+            else
+                MessageBox.Show("Fail");
+        }
 
         //TEXTBOX FILTERS
         private void toolStripComboBox1_TextChanged(object sender, EventArgs e)
@@ -268,13 +297,6 @@ namespace AdminForm
                 this.TextBox.Enabled = true;
                 this.TextBox.Focus();
             }
-            else if (toolStripComboBox1.Text == "UserInfo")
-            {
-                this.label1.Visible = true;
-                this.label1.Text = "<- UserID";
-                this.TextBox.Enabled = true;
-                this.TextBox.Focus();
-            }
             else if (toolStripComboBox1.Text == "ShowTimeByCompany")
             {
                 this.label1.Visible = true;
@@ -296,6 +318,13 @@ namespace AdminForm
                 this.TextBox.Enabled = true;
                 this.TextBox.Focus();
             }
+            //else if (toolStripComboBox1.Text == "UserInfo")
+            //{
+            //    this.label1.Visible = true;
+            //    this.label1.Text = "<- UserID";
+            //    this.TextBox.Enabled = true;
+            //    this.TextBox.Focus();
+            //}
             //RESET
             DataView.DataSource = null;
             DataView.Rows.Clear();
@@ -320,6 +349,13 @@ namespace AdminForm
                 DataSets = funcs.ResMovie(this.TextBox.Text);
             DataTables = DataSets.Tables[0];
             DataView.DataSource = DataTables;
+        }
+
+
+        //MISC
+        private void BalanceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar);
         }
     }
 }

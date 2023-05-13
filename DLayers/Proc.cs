@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace AdminForm.DLayers
@@ -35,6 +37,11 @@ namespace AdminForm.DLayers
         public bool DelRES(int ID)
         {
             string sql = $"exec Sp_DelReservation '{ID}'";
+            return Main.ExecuteNoTable(sql);
+        }
+        public bool AddBaL(string ID, int Money)
+        {
+            string sql = $"update Customer set Balance = Balance + {Money} where User_ID = '{ID}'";
             return Main.ExecuteNoTable(sql);
         }
     }

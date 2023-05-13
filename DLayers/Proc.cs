@@ -44,5 +44,15 @@ namespace AdminForm.DLayers
             string sql = $"update Customer set Balance = Balance + {Money} where User_ID = '{ID}'";
             return Main.ExecuteNoTable(sql);
         }
+        public bool AddComp(string ID,string name,string email,string phone, string addr)
+        {
+            string sql = $"exec Sp_AddNewCompany '{ID}','{name}','{email}', '{phone}', '{addr}'";
+            return Main.ExecuteNoTable(sql);
+        }
+        public bool AddRom(string ID, int seats, string res, string audio)
+        {
+            string sql = $"exec Sp_AddNewRoom '{ID}', {seats},'{res}','{audio}'";
+            return Main.ExecuteNoTable(sql);
+        }
     }
 }

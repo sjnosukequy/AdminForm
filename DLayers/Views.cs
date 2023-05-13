@@ -86,5 +86,10 @@ namespace AdminForm.DLayers
             string sql = "select * from View_HighRatingShowing";
             return Main.TableQuerry(sql);
         }
+        public DataSet Room()
+        {
+            string sql = "select * from Room";
+            return Main.TableQuerry(sql);
+        }
     }
 }

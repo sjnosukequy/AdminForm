@@ -27,6 +27,7 @@ namespace AdminForm
         private bool Employee = false;
         private bool Review = false;
         private bool Company = false;
+        private bool Room = false;
         public Main()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace AdminForm
             Employee = false;
             Review = false;
             Company = false;
+            Room = false;
             this.TextBox.Enabled = false;
             this.TextBox.Clear();
             this.label1.Visible = false;
@@ -155,13 +157,25 @@ namespace AdminForm
         private void companyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RESETFLAGS();
-            Review = true;
+            Company = true;
             DataSets = views.Company();
             DataTables = DataSets.Tables[0];
             DataView.DataSource = DataTables;
             this.toolStripComboBox1.Items.Clear();
             this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
-            this.ADDBUTT.Enabled = false;
+            this.ADDBUTT.Enabled = true;
+            this.DELETE.Enabled = false;
+        }
+        private void roomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RESETFLAGS();
+            Room = true;
+            DataSets = views.Room();
+            DataTables = DataSets.Tables[0];
+            DataView.DataSource = DataTables;
+            this.toolStripComboBox1.Items.Clear();
+            this.toolStripComboBox1.Text = this.toolStripComboBox1.Items.Count.ToString() + " Filters";
+            this.ADDBUTT.Enabled = true;
             this.DELETE.Enabled = false;
         }
 
@@ -213,6 +227,27 @@ namespace AdminForm
             else if(Employee)
             {
 
+            }
+            else if(Company)
+            {
+                if (procs.AddComp(this.DataView.Rows[a].Cells["Company_ID"].Value.ToString(), this.DataView.Rows[a].Cells["Name"].Value.ToString(), this.DataView.Rows[a].Cells["Email"].Value.ToString(), this.DataView.Rows[a].Cells["Phone"].Value.ToString(), this.DataView.Rows[a].Cells["Address"].Value.ToString()))
+                {
+                    companyToolStripMenuItem_Click(sender, e);
+                    MessageBox.Show("SUCCESS!!");
+                }
+                else
+                    MessageBox.Show("FAIL");
+            }
+            else if(Room)
+            {
+                int seats = Int32.Parse(this.DataView.Rows[a].Cells["MaxSeats"].Value.ToString());
+                if (procs.AddRom(this.DataView.Rows[a].Cells["Room_ID"].Value.ToString(), seats, this.DataView.Rows[a].Cells["Screen_Resolution"].Value.ToString(), this.DataView.Rows[a].Cells["Audio_Quality"].Value.ToString()))
+                {
+                    roomToolStripMenuItem_Click(sender, e);
+                    MessageBox.Show("SUCCESS!!");
+                }
+                else
+                    MessageBox.Show("FAIL");
             }
         }
         private void DELETE_Click(object sender, EventArgs e)
@@ -357,5 +392,6 @@ namespace AdminForm
         {
             e.Handled = !char.IsDigit(e.KeyChar);
         }
+
     }
 }

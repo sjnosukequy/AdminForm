@@ -10,7 +10,8 @@ namespace AdminForm.BLayers
 {
     public class DBMain
     {
-        string connectionString = "Data Source=localhost;" + "Initial Catalog=Cinema;" + "Integrated Security=SSPI";
+        string connectionString = "Data Source= localhost;" + "Initial Catalog=Cinema;" + "Integrated Security=SSPI";
+        //string connectionString = "Data Source= 14.187.244.120;Initial Catalog=Cinema;Integrated Security=False;User ID=sa;Password=123456";
         SqlConnection connection = null;
         SqlCommand command = null;
         SqlDataAdapter dAdapt = null;

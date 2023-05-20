@@ -78,12 +78,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DataView.Location = new System.Drawing.Point(12, 34);
-            this.DataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DataView.Location = new System.Drawing.Point(9, 28);
+            this.DataView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DataView.Name = "DataView";
             this.DataView.RowHeadersWidth = 51;
             this.DataView.RowTemplate.Height = 24;
-            this.DataView.Size = new System.Drawing.Size(1256, 619);
+            this.DataView.Size = new System.Drawing.Size(942, 503);
             this.DataView.TabIndex = 0;
             // 
             // toolStrip1
@@ -97,7 +97,7 @@
             this.label1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1280, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(960, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -116,62 +116,62 @@
             this.Views.Image = ((System.Drawing.Image)(resources.GetObject("Views.Image")));
             this.Views.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Views.Name = "Views";
-            this.Views.Size = new System.Drawing.Size(71, 29);
+            this.Views.Size = new System.Drawing.Size(60, 24);
             this.Views.Text = "Views";
             // 
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.customersToolStripMenuItem.Text = "Customers";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.customersToolStripMenuItem_Click);
             // 
             // moviesToolStripMenuItem
             // 
             this.moviesToolStripMenuItem.Name = "moviesToolStripMenuItem";
-            this.moviesToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.moviesToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.moviesToolStripMenuItem.Text = "Movies";
             this.moviesToolStripMenuItem.Click += new System.EventHandler(this.moviesToolStripMenuItem_Click);
             // 
             // showingTimeToolStripMenuItem
             // 
             this.showingTimeToolStripMenuItem.Name = "showingTimeToolStripMenuItem";
-            this.showingTimeToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.showingTimeToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.showingTimeToolStripMenuItem.Text = "Showing Time";
             this.showingTimeToolStripMenuItem.Click += new System.EventHandler(this.showingTimeToolStripMenuItem_Click);
             // 
             // roomToolStripMenuItem
             // 
             this.roomToolStripMenuItem.Name = "roomToolStripMenuItem";
-            this.roomToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.roomToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.roomToolStripMenuItem.Text = "Room";
             this.roomToolStripMenuItem.Click += new System.EventHandler(this.roomToolStripMenuItem_Click);
             // 
             // reservationsToolStripMenuItem
             // 
             this.reservationsToolStripMenuItem.Name = "reservationsToolStripMenuItem";
-            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.reservationsToolStripMenuItem.Text = "Reservations";
             this.reservationsToolStripMenuItem.Click += new System.EventHandler(this.reservationsToolStripMenuItem_Click);
             // 
             // employeesToolStripMenuItem
             // 
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.employeesToolStripMenuItem.Text = "Employees";
             this.employeesToolStripMenuItem.Click += new System.EventHandler(this.employeesToolStripMenuItem_Click);
             // 
             // reviewToolStripMenuItem
             // 
             this.reviewToolStripMenuItem.Name = "reviewToolStripMenuItem";
-            this.reviewToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.reviewToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.reviewToolStripMenuItem.Text = "Review";
             this.reviewToolStripMenuItem.Click += new System.EventHandler(this.reviewToolStripMenuItem_Click);
             // 
             // companyToolStripMenuItem
             // 
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.companyToolStripMenuItem.Text = "Company";
             this.companyToolStripMenuItem.Click += new System.EventHandler(this.companyToolStripMenuItem_Click);
             // 
@@ -179,7 +179,7 @@
             // 
             this.toolStripComboBox1.DropDownWidth = 121;
             this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(231, 32);
+            this.toolStripComboBox1.Size = new System.Drawing.Size(174, 27);
             this.toolStripComboBox1.TextChanged += new System.EventHandler(this.toolStripComboBox1_TextChanged);
             // 
             // TextBox
@@ -187,23 +187,23 @@
             this.TextBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBox.Name = "TextBox";
-            this.TextBox.Size = new System.Drawing.Size(200, 32);
+            this.TextBox.Size = new System.Drawing.Size(151, 27);
             this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label1
             // 
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 29);
+            this.label1.Size = new System.Drawing.Size(66, 24);
             this.label1.Text = "HEHEHE";
             this.label1.Visible = false;
             // 
             // ADDBUTT
             // 
             this.ADDBUTT.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ADDBUTT.Location = new System.Drawing.Point(440, 662);
-            this.ADDBUTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ADDBUTT.Location = new System.Drawing.Point(330, 538);
+            this.ADDBUTT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ADDBUTT.Name = "ADDBUTT";
-            this.ADDBUTT.Size = new System.Drawing.Size(125, 47);
+            this.ADDBUTT.Size = new System.Drawing.Size(94, 38);
             this.ADDBUTT.TabIndex = 2;
             this.ADDBUTT.Text = "ADD";
             this.ADDBUTT.UseVisualStyleBackColor = true;
@@ -212,10 +212,10 @@
             // DELETE
             // 
             this.DELETE.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.DELETE.Location = new System.Drawing.Point(690, 662);
-            this.DELETE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DELETE.Location = new System.Drawing.Point(518, 538);
+            this.DELETE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DELETE.Name = "DELETE";
-            this.DELETE.Size = new System.Drawing.Size(125, 47);
+            this.DELETE.Size = new System.Drawing.Size(94, 38);
             this.DELETE.TabIndex = 3;
             this.DELETE.Text = "DELETE";
             this.DELETE.UseVisualStyleBackColor = true;
@@ -224,9 +224,10 @@
             // BalanceTextBox
             // 
             this.BalanceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BalanceTextBox.Location = new System.Drawing.Point(965, 671);
+            this.BalanceTextBox.Location = new System.Drawing.Point(724, 545);
+            this.BalanceTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BalanceTextBox.Name = "BalanceTextBox";
-            this.BalanceTextBox.Size = new System.Drawing.Size(161, 27);
+            this.BalanceTextBox.Size = new System.Drawing.Size(122, 23);
             this.BalanceTextBox.TabIndex = 4;
             this.BalanceTextBox.Visible = false;
             this.BalanceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BalanceTextBox_KeyPress);
@@ -234,10 +235,10 @@
             // BalanceBUTT
             // 
             this.BalanceBUTT.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BalanceBUTT.Location = new System.Drawing.Point(1143, 662);
-            this.BalanceBUTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BalanceBUTT.Location = new System.Drawing.Point(857, 538);
+            this.BalanceBUTT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BalanceBUTT.Name = "BalanceBUTT";
-            this.BalanceBUTT.Size = new System.Drawing.Size(125, 47);
+            this.BalanceBUTT.Size = new System.Drawing.Size(94, 38);
             this.BalanceBUTT.TabIndex = 5;
             this.BalanceBUTT.Text = "ADD";
             this.BalanceBUTT.UseVisualStyleBackColor = true;
@@ -248,18 +249,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(837, 672);
+            this.label2.Location = new System.Drawing.Point(628, 546);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 22);
+            this.label2.Size = new System.Drawing.Size(90, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Add Balance";
             this.label2.Visible = false;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(960, 585);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BalanceBUTT);
             this.Controls.Add(this.BalanceTextBox);
@@ -267,10 +269,10 @@
             this.Controls.Add(this.ADDBUTT);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.DataView);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Admin";
             ((System.ComponentModel.ISupportInitialize)(this.DataView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

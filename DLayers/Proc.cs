@@ -36,7 +36,7 @@ namespace AdminForm.DLayers
         }
         public bool DelRES(int ID)
         {
-            string sql = $"exec Sp_DelReservation '{ID}'";
+            string sql = $"exec Sp_DelReservation {ID}";
             return Main.ExecuteNoTable(sql);
         }
         public bool AddBaL(string ID, int Money)

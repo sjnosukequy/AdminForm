@@ -254,7 +254,7 @@ namespace AdminForm
         {
             if (Res)
             {
-                if (procs.DelRES(Int32.Parse(this.DataView.Rows[this.DataView.CurrentRow.Index].Cells[0].Value.ToString())))
+                if (procs.DelRES(Int32.Parse(this.DataView.Rows[this.DataView.CurrentRow.Index].Cells["Reservation_ID"].Value.ToString())))
                 {
                     reservationsToolStripMenuItem_Click(sender, e);
                     MessageBox.Show("SUCCESS!!");

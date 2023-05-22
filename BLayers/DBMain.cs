@@ -5,6 +5,7 @@ using System.Linq;
 using System.Data;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AdminForm.BLayers
 {
@@ -51,7 +52,7 @@ namespace AdminForm.BLayers
             }
             catch (SqlException ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {

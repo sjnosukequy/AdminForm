@@ -10,7 +10,7 @@ namespace AdminForm.DLayers
 {
     public class Func
     {
-        DBMain Main = new DBMain();
+        DBMain Main = new DBMain(1);
         public DataSet UserCommented(string ID)
         {
             string sql = $"select * from Fn_UserCommented('{ID}')";

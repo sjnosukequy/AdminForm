@@ -10,7 +10,7 @@ namespace AdminForm.DLayers
 {
     public class Views
     {
-        DBMain Main = new DBMain();
+        DBMain Main = new DBMain(1);
         public DataSet ShowTime()
         {
             string sql = "select A.*, B.Screen_Resolution, B.Audio_Quality from ShowTime A join Room B on A.Room_ID = B.Room_ID";

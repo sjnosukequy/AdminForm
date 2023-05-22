@@ -35,7 +35,7 @@ namespace AdminForm
             DataTables = DataSets.Tables[0];
             DataView.DataSource = DataTables;
             this.TextBox.Enabled = false;
-            this.ADDBUTT.Enabled = true;
+            this.ADDBUTT.Enabled = false;
             this.DELETE.Enabled = false;
         }
         private void RESETFLAGS()

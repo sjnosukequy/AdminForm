@@ -10,7 +10,7 @@ namespace AdminForm.DLayers
 {
     internal class Login
     {
-        DBMain Main = new DBMain();
+        DBMain Main = new DBMain(0);
         public bool Check(string User, string Pass)
         {
             string sql = "select * from Fn_AdminLogin('" + User + "','" + Pass + "')";

@@ -13,7 +13,7 @@ namespace AdminForm.DLayers
 {
     internal class Proc
     {
-        DBMain Main = new DBMain();
+        DBMain Main = new DBMain(1);
         public bool AddRES(string User, string ShowID, int Seat)
         {
             string sql = $"exec Sp_AddReservation '{User}', '{ShowID}', '{Seat}";

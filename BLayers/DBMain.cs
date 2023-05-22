@@ -10,13 +10,17 @@ namespace AdminForm.BLayers
 {
     public class DBMain
     {
-        string connectionString = "Data Source= localhost;" + "Initial Catalog=Cinema;" + "Integrated Security=SSPI";
-        //string connectionString = "Data Source= 14.187.244.120;Initial Catalog=Cinema;Integrated Security=False;User ID=sa;Password=123456";
+        string connectionString;
+        //string connectionString = "Data Source= localhost;" + "Initial Catalog=Cinema;" + "Integrated Security=SSPI";
         SqlConnection connection = null;
         SqlCommand command = null;
         SqlDataAdapter dAdapt = null;
-        public DBMain()
+        public DBMain(int i)
         {
+            if(i == 0)
+                connectionString = "Data Source= localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=login123;Password=login";
+            else
+                connectionString = "Data Source= localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=admin123;Password=admin";
             connection = new SqlConnection(connectionString);
             command = connection.CreateCommand();
         }
